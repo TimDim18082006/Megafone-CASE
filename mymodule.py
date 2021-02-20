@@ -253,7 +253,7 @@ def get_bootstrap_rev(
     '''
     boot_len = max([len(data_column_1), len(data_column_2)]) # оставляем размер выборки внутри процедуры !!!
     boot_data = []
-    for i in (tqdm(range(boot_it)) if timer else range(boot_it)): # извлекаем подвыборки и бегунок активируем
+    for _ in (tqdm(range(boot_it)) if timer else range(boot_it)): # извлекаем подвыборки и бегунок активируем
         samples_1 = data_column_1.sample(
             boot_len,
             replace = True # параметр возвращения значений выборки
@@ -375,7 +375,7 @@ def class_describe(data_y=pd.Series(), data_x=pd.Series(),df=pd.DataFrame(), nam
         df = pd.crosstab(data_y, data_x,rownames=[name_y], colnames=[name_x],margins=True)
 
     plt.figure(figsize=(10, 12))
-    fig, ax = plt.subplots()
+    _ , ax = plt.subplots()
     sns.heatmap(df, cmap ='viridis', annot= True,fmt='g',linewidths=.5)
     ax.xaxis.set_label_position("top")
     plt.tight_layout()
