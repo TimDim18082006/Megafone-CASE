@@ -2,3 +2,5 @@
 External Libraries/
 .idea/
 Thumbs.db
+__pycache__/
+.ipynb_checkpoints/
