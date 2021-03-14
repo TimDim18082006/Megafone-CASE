@@ -1,2 +1,4 @@
 *.png
 External Libraries/
+.idea/
+Thumbs.db
